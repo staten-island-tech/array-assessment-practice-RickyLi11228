@@ -86,17 +86,23 @@ const titles = [
 
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
-
 //Sort books from oldest to most recent
 
 //sort books alphabetically
 
 //Find who wrote War and Peace
-
+const warnpeace = books.filter((book) => book.name === "War and Peace")
+warnpeace.forEach((author) => console.log(author.authorFirst))
 //how many books were written before 1900?
-
+const old = books.filter((book) => book.publishDate < 1900)
+old.forEach((book) =>console.log(book.publishDate))
 //was there at least one book published within the last 100 years?
-
+const no = books.filter((book) => book.publishDate >= 1923)
+if (no !== undefined){
+  console.log("Yes")
+  } else if (no === undefined) {
+      console.log("No")
+}
 //was every book published within the last 100 years?
 
 //print a list of books that "includes" the genre historical
