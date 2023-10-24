@@ -86,6 +86,8 @@ const titles = [
 
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
+const print = books.forEach((book) => console.log(book.authorFirst,"wrote",book.name,"in",book.publishDate))
+
 //Sort books from oldest to most recent
 
 //sort books alphabetically
@@ -97,12 +99,14 @@ warnpeace.forEach((author) => console.log(author.authorFirst))
 const old = books.filter((book) => book.publishDate < 1900)
 old.forEach((book) =>console.log(book.publishDate))
 //was there at least one book published within the last 100 years?
-const no = books.filter((book) => book.publishDate >= 1923)
-if (no !== undefined){
+const time = books.filter((book) => book.publishDate >= 1923)
+if (time.length > 0){
   console.log("Yes")
   } else if (no === undefined) {
-      console.log("No")
-}
+  console.log("No")
+  }
 //was every book published within the last 100 years?
-
+const published = books.filter((book) => book.publishDate >= 1923)
 //print a list of books that "includes" the genre historical
+const genre = books.filter((book) => book.genre.includes("historical"))
+const genres = genre.forEach((book) =>(console.log(book)))
